@@ -27,7 +27,7 @@ async def send_milosti():
 		await bot.send_message(chat_id=user[0], text=f'{random.choice(phrases_list)}')
 
 async def scheduler():
-	aioschedule.every().day.at("00:30").do(send_milosti)
+	aioschedule.every().day.at("14:00").do(send_milosti)
 	while True:
 		await aioschedule.run_pending()
 		await asyncio.sleep(1)
